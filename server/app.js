@@ -20,6 +20,11 @@ app.use(cors(
   }
 ));
 
+app.use(express.static(path.join(__dirname, './client/build')));
+
+ app.get('*', (req, res) => {
+   res.sendFile(path.join(__dirname, './client/build/index.html'));
+ });
 
 // ************ Link the router file ************
 app.use(require('./router/auth'));
