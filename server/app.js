@@ -24,8 +24,11 @@ app.use(cors(
 // ************ Link the router file ************
 app.use(require('./router/auth'));
 
+router.get('/', (req, res) =>{
+  res.send("Hello");
+});
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 
 // *************Routers of express******************
