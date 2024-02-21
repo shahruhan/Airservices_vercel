@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import {useNavigate} from 'react-router-dom';
 
-const serverUrl = 'http://localhost:5000';
+const serverUrl = 'https://babulmadina.up.railway.app';
 
 const Dashboard_page = () => {
 
