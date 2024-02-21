@@ -26,8 +26,10 @@ const AdminRegister_page = () => {
 		const res = await fetch(`${serverUrl}/admin_register`, {
 			method: "POST",
 			headers: {
+				Accept: "application/json",
 				"Content-Type": "application/json"
 			},
+			credentials: 'include',
 			body: JSON.stringify({
 				name, email, contact, password, conPassword
 			})
