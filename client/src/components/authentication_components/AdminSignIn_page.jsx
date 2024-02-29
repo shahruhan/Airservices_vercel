@@ -33,7 +33,7 @@ const AdminSignIn_page = () => {
 				Accept: "application/json",
 				"Content-Type": "application/json"
 			},
-			credentials: 'true',
+			credentials: 'include',
 			body: JSON.stringify({
 				email, password
 			})
