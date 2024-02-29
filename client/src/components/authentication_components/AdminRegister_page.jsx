@@ -6,7 +6,7 @@ import {adminRegisterSchema} from '../../schemas';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const serverUrl = 'https://babulmadina.up.railway.app';
+//const serverUrl = 'https://babulmadina.up.railway.app';
  
 const AdminRegister_page = () => {
 
@@ -23,7 +23,7 @@ const AdminRegister_page = () => {
 		const Data = event;
 		const { name, email, contact, password, conPassword } = Data;
 
-		const res = await fetch(`${serverUrl}/admin_register`, {
+		const res = await fetch(`https://babulmadina.up.railway.app/admin_register`, {
 			method: "POST",
 			headers: {
 				Accept: "application/json",
