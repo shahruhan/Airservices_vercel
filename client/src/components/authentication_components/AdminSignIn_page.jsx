@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { UserContext } from '../../Router';
 
-const serverUrl = 'https://babulmadina.up.railway.app';
+//const serverUrl = 'https://babulmadina.up.railway.app';
 
 const AdminSignIn_page = () => {
 
@@ -27,7 +27,7 @@ const AdminSignIn_page = () => {
 		const Data = event;
 		const { email, password } = Data;
 
-		const res = await fetch(`${serverUrl}/admin_Signin`, {
+		const res = await fetch(`https://babulmadina.up.railway.app/admin_Signin`, {
 			method: "POST",
 			headers: {
 				Accept: "application/json",
