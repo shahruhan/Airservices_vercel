@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import {useNavigate} from 'react-router-dom';
 
-const serverUrl = 'https://babulmadina.up.railway.app';
+//const serverUrl = 'https://babulmadina.up.railway.app';
 
 const Dashboard_page = () => {
 
@@ -26,7 +26,7 @@ const Dashboard_page = () => {
     const callDashboardPage = async () =>{
         try{
 
-            const res = await fetch(`${serverUrl}/dashboard`, {
+            const res = await fetch(`https://babulmadina.up.railway.app/dashboard`, {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
