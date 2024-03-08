@@ -134,7 +134,7 @@ const Header = () => {
     const userHeader = async () =>{
         try{
 
-            const res = await fetch('http://localhost:5000/getdata', {
+            const res = await fetch('https://babulmadina.up.railway.app/getdata', {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
