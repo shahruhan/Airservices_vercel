@@ -7,7 +7,7 @@ import $ from 'jquery';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const serverUrl = 'http://localhost:5000';
+const serverUrl = 'https://babulmadina.up.railway.app';
 
 const AddCustomer_page = () => {
 
