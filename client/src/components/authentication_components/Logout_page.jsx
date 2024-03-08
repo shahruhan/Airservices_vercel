@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { UserContext } from '../../Router';
 
-const serverUrl = 'http://localhost:5000';
+const serverUrl = 'https://babulmadina.up.railway.app';
  
 const Logout_page = () => {
 
