@@ -180,10 +180,10 @@ const Header = () => {
                             <img src={process.env.PUBLIC_URL+"/images/brand/logo-3.png"} className="header-brand-img light-logo1" alt="logo"/>
                         </a>
                         {/* LOGO */}
-                        <div className="main-header-center ms-3 d-none d-lg-block">
+{/*                         <div className="main-header-center ms-3 d-none d-lg-block">
                             <input type="text" className="form-control" id="typehead" placeholder="Search for results..." autoComplete="off"/>
                             <button className="btn px-0 pt-2"><i className="fe fe-search" aria-hidden="true"></i></button>
-                        </div>
+                        </div> */}
                         <div className="d-flex order-lg-2 ms-auto header-right-icons">
                             <div className="dropdown d-none">
                                 <a href={process.env.PUBLIC_URL+'/dashboard'} className="nav-link icon" data-bs-toggle="dropdown">
@@ -265,9 +265,9 @@ const Header = () => {
                                                 <a href={`/user_profile/${userData._id}`} className="dropdown-item">
                                                     <i className="dropdown-icon fe fe-user"></i>My Profile
                                                 </a>
-                                                <a className="dropdown-item" href={process.env.PUBLIC_URL+'/lockscreen.html'}>
+{/*                                                 <a className="dropdown-item" href={process.env.PUBLIC_URL+'/lockscreen.html'}>
                                                     <i className="dropdown-icon fe fe-lock"></i> Lockscreen
-                                                </a>
+                                                </a> */}
                                                 <a className="dropdown-item" href={'/logout'}>
                                                     <i className="dropdown-icon fe fe-alert-circle"></i> Sign out
                                                 </a>
