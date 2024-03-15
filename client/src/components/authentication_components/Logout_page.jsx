@@ -34,7 +34,7 @@ const Logout_page = () => {
 
         } catch(err) {
             dispatch({ type: "senior admin", payload: false });
-            history("/admin_Signin", {replace: true});
+            history("/admin", {replace: true});
         }
     }
     
@@ -43,11 +43,6 @@ const Logout_page = () => {
     }, []);
 
 
-    return(
-        <>
-        <h1>welcome to react logout</h1>
-        </>
-    )
 }
  
 export default Logout_page;
