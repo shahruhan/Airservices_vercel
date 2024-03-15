@@ -81,7 +81,7 @@ const AdminRegister_page = () => {
                 progress: undefined,
                 theme: "colored"
                 });
-			setTimeout( history("/admin_Signin"), 5000);
+			setTimeout( history("/admin"), 5000);
 		}
 	}
 
