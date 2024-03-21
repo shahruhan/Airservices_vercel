@@ -288,10 +288,10 @@ const Header = () => {
                 <div className="app-sidebar">
                     <div className="side-header">
                         <a className="header-brand1" href={process.env.PUBLIC_URL+'/dashboard'}>
-                            <img src={process.env.PUBLIC_URL+"/images/brand/logo.png"} className="header-brand-img desktop-logo" alt="logo"/>
+                            <img src={process.env.PUBLIC_URL+"/images/brand/logo.png"} className="header-brand-img desktop-logo" alt="logo" style={{'padding': '35px'}}/>
                             <img src={process.env.PUBLIC_URL+"/images/brand/logo-1.png"} className="header-brand-img toggle-logo" alt="logo"/>
                             <img src={process.env.PUBLIC_URL+"/images/brand/logo-2.png"} className="header-brand-img light-logo" alt="logo"/>
-                            <img src={process.env.PUBLIC_URL+"/images/brand/logo-3.png"} className="header-brand-img light-logo1" alt="logo"/>
+                            <img src={process.env.PUBLIC_URL+"/images/brand/logo-3.png"} className="header-brand-img light-logo1" alt="logo" style={{'padding': '35px'}}/>
                         </a>
                         {/* LOGO */}
                     </div>
