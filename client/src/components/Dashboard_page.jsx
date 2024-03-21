@@ -44,7 +44,7 @@ const Dashboard_page = () => {
             }
 
         } catch(err) {
-            history("/admin_Signin");
+            history("/admin");
         }
     }
     
