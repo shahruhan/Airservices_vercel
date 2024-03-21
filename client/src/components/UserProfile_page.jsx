@@ -45,7 +45,7 @@ const UserProfile_page = () => {
 
         } catch(err) {
             window.alert(err);
-            history("/admin_Signin");
+            history("/admin");
         }
     }
 
