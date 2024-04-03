@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+//url for server
 const serverUrl = 'https://babulmadina.up.railway.app';
  
 const UsersInfo_page = () => {
