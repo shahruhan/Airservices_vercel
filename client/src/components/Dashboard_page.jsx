@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import {useNavigate} from 'react-router-dom';
 
+//url for server
 //const serverUrl = 'https://babulmadina.up.railway.app';
 
 const Dashboard_page = () => {
