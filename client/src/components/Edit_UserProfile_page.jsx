@@ -97,7 +97,15 @@ const Edit_UserProfile_page = () => {
         const formData = new FormData();
         formData.append('_id', _id);
         formData.append('file', file);
-        axios.post(`${serverUrl}/edit_userProfile`, formData)
+
+        axios.post(`${serverUrl}/edit_userProfile`, formData, {
+	    withCredentials: true,
+	    headers: {
+	        'Access-Control-Allow-Origin': '*', 
+		'Accept': 'application/json',
+	        'Content-Type': 'application/json'
+	    }
+	})
         .then(res => {
             alert(res);
             if (res === 422 || !res){
