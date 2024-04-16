@@ -97,6 +97,7 @@ const Edit_UserProfile_page = () => {
         const formData = new FormData();
         formData.append('_id', _id);
         formData.append('file', file);
+	    // using headers in axios
 
         axios.post(`${serverUrl}/edit_userProfile`, formData, {
 	    withCredentials: true,
