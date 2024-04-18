@@ -104,7 +104,7 @@ const Edit_UserProfile_page = () => {
 	    headers: {
 	        'Access-Control-Allow-Origin': '*', 
 		'Accept': 'application/json',
-	        'Content-Type': 'multipart/form-data'
+	        'Content-Type': 'application/x-www-form-urlencoded'
 	    }
 	})
         .then(res => {
