@@ -101,6 +101,7 @@ const Edit_UserProfile_page = () => {
 
         axios.post(`${serverUrl}/edit_userProfile`, formData, {
 	    withCredentials: true,
+	    credentials: 'include',
 	    headers: {
 	        'Access-Control-Allow-Origin': '*', 
 		'Accept': 'application/json',
