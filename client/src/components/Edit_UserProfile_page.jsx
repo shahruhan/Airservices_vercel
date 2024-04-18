@@ -103,8 +103,6 @@ const Edit_UserProfile_page = () => {
 	    withCredentials: true,
 	    credentials: 'include',
 	    headers: {
-	        'Access-Control-Allow-Origin': '*', 
-		'Accept': 'application/json',
 	        'Content-Type': 'application/x-www-form-urlencoded'
 	    }
 	})
