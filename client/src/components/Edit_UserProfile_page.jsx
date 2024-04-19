@@ -99,7 +99,7 @@ const Edit_UserProfile_page = () => {
         formData.append('file', file);
 	
 
-        axios.POST(`${serverUrl}/edit_userProfile`, formData, {
+        axios.post(`${serverUrl}/edit_userProfile`, formData, {
 	    withCredentials: true,
 	    headers: {
 	        'Content-Type': 'application/x-www-form-urlencoded'
