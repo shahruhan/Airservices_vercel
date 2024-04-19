@@ -99,13 +99,12 @@ const Edit_UserProfile_page = () => {
         formData.append('file', file);
 	
 
-        axios.post(`${serverUrl}/edit_userProfile`, formData, {
+        axios.POST(`${serverUrl}/edit_userProfile`, formData, {
 	    withCredentials: true,
-	    credentials: 'include',
 	    headers: {
-		    Accept: "application/json",
 	        'Content-Type': 'application/x-www-form-urlencoded'
-	    }
+	    },
+		credentials: 'include'
 	})
         .then(res => {
             alert(res);
