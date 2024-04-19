@@ -103,6 +103,7 @@ const Edit_UserProfile_page = () => {
 	    withCredentials: true,
 	    credentials: 'include',
 	    headers: {
+		    Accept: "application/json",
 	        'Content-Type': 'application/x-www-form-urlencoded'
 	    }
 	})
