@@ -99,7 +99,7 @@ const Edit_UserProfile_page = () => {
         formData.append('file', file);
 	
 
-        axios.post(`${serverUrl}/edit_userProfile`, formData, {
+        axios.get(`${serverUrl}/edit_userProfile`, formData, {
 	    withCredentials: true,
 	})
         .then(res => {
