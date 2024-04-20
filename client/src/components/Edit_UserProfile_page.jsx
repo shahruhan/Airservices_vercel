@@ -101,10 +101,6 @@ const Edit_UserProfile_page = () => {
 
         axios.post(`${serverUrl}/edit_userProfile`, formData, {
 	    withCredentials: true,
-	    headers: {
-	        'Content-Type': 'application/x-www-form-urlencoded'
-	    },
-		credentials: 'include'
 	})
         .then(res => {
             alert(res);
