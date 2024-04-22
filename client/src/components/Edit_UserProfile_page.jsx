@@ -98,7 +98,10 @@ const Edit_UserProfile_page = () => {
         formData.append('_id', _id);
         formData.append('file', file);
 
-	    console.log(formData);
+	    for (var pair of formData.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]); 
+            console.log(pair[1]); 
+       		 }
 
 	    try{
             
