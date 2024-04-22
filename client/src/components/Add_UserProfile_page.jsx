@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import { Formik, Field, Form } from "formik";
 import {addUserSchema} from '../schemas';
 import $ from 'jquery';
-import axios from 'axios';
+// import axios from 'axios';
 // dotenv.config({path: './config.env'});
 // const dotenv = require('dotenv');
 // dotenv.config({path: './.env.local'});
@@ -63,38 +63,38 @@ const Add_UserProfile_page = () => {
         const formData = new FormData();
         formData.append('_id', _id);
         formData.append('file', file);
-        axios.post(`${serverUrl}/upload`, formData)
-        .then(res => {
-            if (res === 422 || !res){
-                setUserProfileData(res)
-                // toast.error('Plz select the profile!', {
-                //     position: "top-right",
-                //     autoClose: 5000,
-                //     hideProgressBar: false,
-                //     closeOnClick: true,
-                //     pauseOnHover: true,
-                //     draggable: true,
-                //     progress: undefined,
-                //     theme: "colored"
-                //     });
-            }
-            // else{
+        // axios.post(`${serverUrl}/upload`, formData)
+        // .then(res => {
+        //     if (res === 422 || !res){
+        //         setUserProfileData(res)
+        //         toast.error('Plz select the profile!', {
+        //             position: "top-right",
+        //             autoClose: 5000,
+        //             hideProgressBar: false,
+        //             closeOnClick: true,
+        //             pauseOnHover: true,
+        //             draggable: true,
+        //             progress: undefined,
+        //             theme: "colored"
+        //             });
+        //     }
+        //     else{
                 
-            //     // setTimeout(reloadPage, 5000);
-            //     // toast.success('Profile Updated successfully!', {
-            //     //     position: "top-right",
-            //     //     autoClose: 5000,
-            //     //     hideProgressBar: false,
-            //     //     closeOnClick: true,
-            //     //     pauseOnHover: true,
-            //     //     draggable: true,
-            //     //     progress: undefined,
-            //     //     theme: "colored"
-            //     //     });
-            //     //     history("/add_UserProfile");
-            // }
-        } )
-        .catch(err => console.log(err))
+        //         // setTimeout(reloadPage, 5000);
+        //         // toast.success('Profile Updated successfully!', {
+        //         //     position: "top-right",
+        //         //     autoClose: 5000,
+        //         //     hideProgressBar: false,
+        //         //     closeOnClick: true,
+        //         //     pauseOnHover: true,
+        //         //     draggable: true,
+        //         //     progress: undefined,
+        //         //     theme: "colored"
+        //         //     });
+        //         //     history("/add_UserProfile");
+        //     }
+        // } )
+        // .catch(err => console.log(err))
 
         // const data = await res.json();
 
