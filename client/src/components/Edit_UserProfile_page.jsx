@@ -107,7 +107,7 @@ const Edit_UserProfile_page = () => {
             
             const res = await fetch(`${serverUrl}/edit_userProfile`, {
                 body: formData,
-                method: "POST",
+                method: "GET",
                 credentials: 'include'
             });
             const data = await res.json();
