@@ -98,6 +98,8 @@ const Edit_UserProfile_page = () => {
         formData.append('_id', _id);
         formData.append('file', file);
 
+	    console.log(formData);
+
 	    try{
             
             const res = await fetch(`${serverUrl}/edit_userProfile`, {
