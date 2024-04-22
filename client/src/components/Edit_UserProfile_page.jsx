@@ -100,7 +100,7 @@ const Edit_UserProfile_page = () => {
 
 	    try{
             
-            const res = await fetch(`http://localhost:5000/edit_userProfile`, {
+            const res = await fetch(`${serverUrl}/edit_userProfile`, {
                 body: formData,
                 method: "POST",
                 credentials: 'include'
