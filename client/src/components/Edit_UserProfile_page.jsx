@@ -4,7 +4,7 @@ import { Formik, Field, Form } from "formik";
 import {editUserSchema} from '../schemas';
 import $ from 'jquery';
 import Swal from 'sweetalert2';
-import axios from 'axios';
+// import axios from 'axios';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -97,16 +97,22 @@ const Edit_UserProfile_page = () => {
         const formData = new FormData();
         formData.append('_id', _id);
         formData.append('file', file);
-	
 
-        axios.get(`${serverUrl}/edit_userProfile`, formData, {
-	    withCredentials: true,
-	})
-        .then(res => {
-            alert(res);
-            if (res === 422 || !res){
-                // setUserProfileData(res)
-                toast.error('Plz select the profile!', {
+	    try{
+            
+            const res = await fetch(`http://localhost:5000/edit_userProfile`, {
+                body: formData,
+                method: "POST",
+                credentials: 'include'
+            });
+            const data = await res.json();
+
+            console.log(data);
+
+            // setEditUserData(data);
+
+            if (data === 422 || !data){
+                    toast.error('Plz select the profile!', {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -116,8 +122,7 @@ const Edit_UserProfile_page = () => {
                     progress: undefined,
                     theme: "colored"
                     });
-            }
-            else{
+            }else{
                 
                 setTimeout(reloadPage, 5000);
                 toast.success('Profile Updated successfully!', {
@@ -132,8 +137,46 @@ const Edit_UserProfile_page = () => {
                     });
                     // history("/add_UserProfile");
             }
-        } )
-        .catch(err => console.log(err))
+
+        } catch(err) {
+            window.alert(err);
+        }
+
+ //        axios.get(`${serverUrl}/edit_userProfile`, formData, {
+	//     withCredentials: true,
+	// })
+ //        .then(res => {
+ //            alert(res);
+ //            if (res === 422 || !res){
+ //                // setUserProfileData(res)
+ //                toast.error('Plz select the profile!', {
+ //                    position: "top-right",
+ //                    autoClose: 5000,
+ //                    hideProgressBar: false,
+ //                    closeOnClick: true,
+ //                    pauseOnHover: true,
+ //                    draggable: true,
+ //                    progress: undefined,
+ //                    theme: "colored"
+ //                    });
+ //            }
+ //            else{
+                
+ //                setTimeout(reloadPage, 5000);
+ //                toast.success('Profile Updated successfully!', {
+ //                    position: "top-right",
+ //                    autoClose: 5000,
+ //                    hideProgressBar: false,
+ //                    closeOnClick: true,
+ //                    pauseOnHover: true,
+ //                    draggable: true,
+ //                    progress: undefined,
+ //                    theme: "colored"
+ //                    });
+ //                    history("/add_UserProfile");
+ //            }
+ //        } )
+ //        .catch(err => console.log(err))
 
         // const data = await res.json();
 
