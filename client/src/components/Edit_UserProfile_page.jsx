@@ -107,61 +107,63 @@ const Edit_UserProfile_page = () => {
     const handleInput = async (event) =>{
 
         const _id = editUserData._id;
+	const selectedFile = file;
 
+	    console.log(selectedFile);
        
 
-        const formData = new FormData();
-        formData.append('_id', _id);
-        formData.append('file', file);
+     //    const formData = new FormData();
+     //    formData.append('_id', _id);
+     //    formData.append('file', file);
 
-	    for (var pair of formData.entries()) {
-            console.log(pair[0]+ ', ' + pair[1]); 
-            console.log(pair[1]); 
-       		 }
+	    // for (var pair of formData.entries()) {
+     //        console.log(pair[0]+ ', ' + pair[1]); 
+     //        console.log(pair[1]); 
+     //   		 }
 
-	    try{
+	    // try{
             
-            const res = await fetch(`${serverUrl}/edit_userProfile`, {
-                body: formData,
-                method: "GET",
-                credentials: 'include'
-            });
-            const data = await res.json();
+     //        const res = await fetch(`${serverUrl}/edit_userProfile`, {
+     //            body: formData,
+     //            method: "GET",
+     //            credentials: 'include'
+     //        });
+     //        const data = await res.json();
 
-            console.log(data);
+     //        console.log(data);
 
-            // setEditUserData(data);
+     //        // setEditUserData(data);
 
-            if (data === 422 || !data){
-                    toast.error('Plz select the profile!', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored"
-                    });
-            }else{
+     //        if (data === 422 || !data){
+     //                toast.error('Plz select the profile!', {
+     //                position: "top-right",
+     //                autoClose: 5000,
+     //                hideProgressBar: false,
+     //                closeOnClick: true,
+     //                pauseOnHover: true,
+     //                draggable: true,
+     //                progress: undefined,
+     //                theme: "colored"
+     //                });
+     //        }else{
                 
-                setTimeout(reloadPage, 5000);
-                toast.success('Profile Updated successfully!', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored"
-                    });
-                    // history("/add_UserProfile");
-            }
+     //            setTimeout(reloadPage, 5000);
+     //            toast.success('Profile Updated successfully!', {
+     //                position: "top-right",
+     //                autoClose: 5000,
+     //                hideProgressBar: false,
+     //                closeOnClick: true,
+     //                pauseOnHover: true,
+     //                draggable: true,
+     //                progress: undefined,
+     //                theme: "colored"
+     //                });
+     //                // history("/add_UserProfile");
+     //        }
 
-        } catch(err) {
-            window.alert(err);
-        }
+     //    } catch(err) {
+     //        window.alert(err);
+     //    }
 
  //        axios.get(`${serverUrl}/edit_userProfile`, formData, {
 	//     withCredentials: true,
