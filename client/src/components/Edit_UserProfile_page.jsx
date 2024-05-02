@@ -6,6 +6,22 @@ import $ from 'jquery';
 import Swal from 'sweetalert2';
 // import axios from 'axios';
 
+// FIREBASE CONFIGURATION
+import firebase from 'firebase/compat/app';
+import "firebase/compat/storage";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAYV3IBu4ITaEv6n670cxVc6dYzB68WxqU",
+    authDomain: "babulmadina-9e69c.firebaseapp.com",
+    projectId: "babulmadina-9e69c",
+    storageBucket: "babulmadina-9e69c.appspot.com",
+    messagingSenderId: "100857525786",
+    appId: "1:100857525786:web:35da479a32943d30da83a3",
+    measurementId: "G-QPVF1XE5WS"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
