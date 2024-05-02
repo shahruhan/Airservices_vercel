@@ -108,8 +108,9 @@ const Edit_UserProfile_page = () => {
 
         const _id = editUserData._id;
 	const selectedFile = file;
-console.log("before file");
-	    console.log(selectedFile);
+	    
+	console.log("before file");
+	console.log(selectedFile);
 
 	if(selectedFile){
             const storageRef = firebase.storage().ref();
@@ -125,7 +126,7 @@ console.log("before file");
         } else{
             console.log("no file selected");
         }
-       
+    }
 
      //    const formData = new FormData();
      //    formData.append('_id', _id);
@@ -219,7 +220,7 @@ console.log("before file");
         // const data = await res.json();
 
 
-    }
+    
 
 
 
