@@ -108,7 +108,7 @@ const Edit_UserProfile_page = () => {
 
         const _id = editUserData._id;
 	const selectedFile = file;
-
+console.log("before file");
 	    console.log(selectedFile);
 
 	if(selectedFile){
@@ -121,6 +121,7 @@ const Edit_UserProfile_page = () => {
                     setImageUrl(downloadURL);
                 });
             });
+		console.log("after file");
         } else{
             console.log("no file selected");
         }
