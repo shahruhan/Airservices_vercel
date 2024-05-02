@@ -110,6 +110,20 @@ const Edit_UserProfile_page = () => {
 	const selectedFile = file;
 
 	    console.log(selectedFile);
+
+	if(selectedFile){
+            const storageRef = firebase.storage().ref();
+            const fileRef = storageRef.child(selectedFile.name);
+    
+            fileRef.put(selectedFile).then((snapshot) => {
+                snapshot.ref.getDownloadURL().then((downloadURL) => {
+                    console.log(downloadURL);
+                    setImageUrl(downloadURL);
+                });
+            });
+        } else{
+            console.log("no file selected");
+        }
        
 
      //    const formData = new FormData();
