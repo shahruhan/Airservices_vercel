@@ -10,6 +10,9 @@ import Swal from 'sweetalert2';
 import firebase from 'firebase/compat/app';
 import "firebase/compat/storage";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const firebaseConfig = {
     apiKey: "AIzaSyAYV3IBu4ITaEv6n670cxVc6dYzB68WxqU",
     authDomain: "babulmadina-9e69c.firebaseapp.com",
@@ -21,9 +24,6 @@ const firebaseConfig = {
   };
 
   firebase.initializeApp(firebaseConfig);
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 //url for server
 const serverUrl = 'https://babulmadina.up.railway.app';
