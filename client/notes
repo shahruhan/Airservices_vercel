@@ -12,3 +12,36 @@ const firebaseConfig = {
   };
 
   firebase.initializeApp(firebaseConfig);
+
+
+
+const formHandler = (e) => {
+  e.preventDefault();
+  const file = e.target[0].files[0];
+  const url = await uploadFiles(file); // 👈 wait for upload to be done
+  createPost(url); // 👈 only then create the post with the url
+};
+
+                           // 👇 this function is asynchronous, meaning it returns a promise
+const uploadFiles = (file) => async {
+  if (!file) return;
+  const storageRef = ref(storage, `files/${file.name}`);
+  const uploadTask = uploadBytesResumable(storageRef, file);
+
+  uploadTask.on(
+    "state_changed",
+    (snapshot) => {
+      const prog = Math.round(
+        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      );
+      setProgress(prog);
+    },
+    (error) => console.log(error)
+  );
+  await uploadTask; // 👈 uploadTask is a promise itself, so you can await it
+  
+  let downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                 // 👆 getDownloadURL returns a promise too, so... yay more await
+
+  return downloadURL; // 👈 return the URL to the caller
+};
