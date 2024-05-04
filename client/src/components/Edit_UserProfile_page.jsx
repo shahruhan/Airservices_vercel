@@ -6,6 +6,10 @@ import $ from 'jquery';
 import Swal from 'sweetalert2';
 // import axios from 'axios';
 
+// FIREBASE CONFIGURATION
+import firebase from 'firebase/compat/app';
+import "firebase/compat/storage";
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -103,7 +107,7 @@ const Edit_UserProfile_page = () => {
             fileRef.put(selectedFile).then((snapshot) => {
                 snapshot.ref.getDownloadURL().then((downloadURL) => {
                     console.log(downloadURL);
-                    setImageUrl(downloadURL);
+                    setEditUserData(downloadURL);
                 });
             });
 		console.log("after file");
