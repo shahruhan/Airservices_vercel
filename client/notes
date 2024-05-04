@@ -1,3 +1,4 @@
+
 // FIREBASE CONFIGURATION
 import firebase from 'firebase/compat/app';
 
@@ -61,3 +62,48 @@ fileRef.put(selectedFile)
                     // Use to signal error if something goes wrong.
                     console.log(`Failed to upload file and get link - ${error}`);
                 });
+
+
+
+*****************************************************MY CODE ****************************
+ const handleInput = async (event) =>{
+
+        const _id = editUserData._id;
+
+	    const selectedFile = file;
+	    
+        const url = await uploadfile(selectedFile);
+        createPost(url);
+    };
+
+    const uploadfile = async (selectedFile) =>  {
+        
+        if(selectedFile){
+            const storageRef = firebase.storage().ref();
+            const fileRef = storageRef.child(selectedFile.name);
+    
+            fileRef.put(selectedFile)
+                .then(snapshot => {
+                    return snapshot.ref.getDownloadURL();   // Will return a promise with the download link
+                })
+
+                .then(downloadURL => {
+                    console.log(`Successfully uploaded file and got download link - ${downloadURL}`);
+                    return downloadURL;
+                })
+
+                .catch(error => {
+                    // Use to signal error if something goes wrong.
+                    console.log(`Failed to upload file and get link - ${error}`);
+                });
+
+		console.log("after file");
+        } else{
+            console.log("no file selected");
+        }
+        
+    }
+
+    const createPost =  (url) =>  {
+        console.log(url);
+    }
