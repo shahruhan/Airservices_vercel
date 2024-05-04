@@ -13,15 +13,15 @@ import ReactDOM from "react-dom/client";
 
 // className "owl-theme" is optional
 
-// FIREBASE CONFIGURATION
-import firebase from 'firebase/compat/app';
-import "firebase/compat/storage";
-
 
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 // import { HashRouter } from 'react-router-dom';
+
+// FIREBASE CONFIGURATION
+import firebase from 'firebase/compat/app';
+import "firebase/compat/storage";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAYV3IBu4ITaEv6n670cxVc6dYzB68WxqU",
