@@ -45,3 +45,19 @@ const uploadFiles = (file) => async {
 
   return downloadURL; // 👈 return the URL to the caller
 };
+
+
+fileRef.put(selectedFile)
+                .then(snapshot => {
+                    return snapshot.ref.getDownloadURL();   // Will return a promise with the download link
+                })
+
+                .then(downloadURL => {
+                    console.log(`Successfully uploaded file and got download link - ${downloadURL}`);
+                    return downloadURL;
+                })
+
+                .catch(error => {
+                    // Use to signal error if something goes wrong.
+                    console.log(`Failed to upload file and get link - ${error}`);
+                });
