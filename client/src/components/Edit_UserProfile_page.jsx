@@ -99,14 +99,16 @@ const Edit_UserProfile_page = () => {
       console.log(selectedFile);
       if (selectedFile) {
         const storageRef = firebase.storage().ref();
+        console.log(storageRef);
+	      
         const fileRef = storageRef.child(selectedFile.name);
 
-        fileRef.put(selectedFile).then((snapshot) => {
-          snapshot.ref.getDownloadURL().then((downloadURL) => {
-            console.log(downloadURL);
-            setEditUserData(downloadURL);
-          });
-        });
+        // fileRef.put(selectedFile).then((snapshot) => {
+        //   snapshot.ref.getDownloadURL().then((downloadURL) => {
+        //     console.log(downloadURL);
+        //     setEditUserData(downloadURL);
+        //   });
+        // });
         console.log("after file");
       } else {
         console.log("no file selected");
