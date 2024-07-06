@@ -92,29 +92,29 @@ const Edit_UserProfile_page = () => {
         callEditUser();
     }, []);
 
-    const handleInput = async (event) => {
-      const _id = editUserData._id;
-      const selectedFile = file;
-      console.log("before file");
-      console.log(selectedFile);
-      if (selectedFile) {
-        // const storageRef = firebase.storage().ref();
-        // console.log(storageRef);
-	      
-        // const fileRef = storageRef.child(selectedFile.name);
+    const handleInput = async (event) =>{
 
-        // fileRef.put(selectedFile).then((snapshot) => {
-        //   snapshot.ref.getDownloadURL().then((downloadURL) => {
-        //     console.log(downloadURL);
-        //     setEditUserData(downloadURL);
-        //   });
-        // });
-        console.log("after file");
-      } else {
-        console.log("no file selected");
-      }
-    };
+        const _id = editUserData._id;
+	const selectedFile = file;
+	    
+	console.log("before file");
+	console.log(selectedFile);
 
+	if(selectedFile){
+            const storageRef = firebase.storage().ref();
+            const fileRef = storageRef.child(selectedFile.name);
+    
+            fileRef.put(selectedFile).then((snapshot) => {
+                snapshot.ref.getDownloadURL().then((downloadURL) => {
+                    console.log(downloadURL);
+                    setEditUserData(downloadURL);
+                });
+            });
+		console.log("after file");
+        } else{
+            console.log("no file selected");
+        }
+    }
 
      //    const formData = new FormData();
      //    formData.append('_id', _id);
