@@ -98,10 +98,10 @@ const Edit_UserProfile_page = () => {
       console.log("before file");
       console.log(selectedFile);
       if (selectedFile) {
-        const storageRef = firebase.storage().ref();
-        console.log(storageRef);
+        // const storageRef = firebase.storage().ref();
+        // console.log(storageRef);
 	      
-        const fileRef = storageRef.child(selectedFile.name);
+        // const fileRef = storageRef.child(selectedFile.name);
 
         // fileRef.put(selectedFile).then((snapshot) => {
         //   snapshot.ref.getDownloadURL().then((downloadURL) => {
