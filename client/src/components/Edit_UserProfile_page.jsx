@@ -92,29 +92,32 @@ const Edit_UserProfile_page = () => {
         callEditUser();
     }, []);
 
-    const handleInput = async (event) =>{
+const handleInput = async (event) => {
+  try {
+    const _id = editUserData._id;
+    const selectedFile = file;
 
-        const _id = editUserData._id;
-	const selectedFile = file;
-	    
-	console.log("before file");
-	console.log(selectedFile);
+    console.log("before file");
+    console.log(selectedFile);
 
-	if(selectedFile){
-            const storageRef = firebase.storage().ref();
-            const fileRef = storageRef.child(selectedFile.name);
-    
-            fileRef.put(selectedFile).then((snapshot) => {
-                snapshot.ref.getDownloadURL().then((downloadURL) => {
-                    console.log(downloadURL);
-                    setEditUserData(downloadURL);
-                });
-            });
-		console.log("after file");
-        } else{
-            console.log("no file selected");
-        }
+    if (selectedFile) {
+      const storageRef = firebase.storage().ref();
+      const fileRef = storageRef.child(selectedFile.name);
+
+      const snapshot = await fileRef.put(selectedFile);
+      const downloadURL = await snapshot.ref.getDownloadURL();
+
+      console.log(downloadURL);
+      setEditUserData(downloadURL);
+      console.log("after file");
+    } else {
+      console.log("no file selected");
     }
+  } catch (error) {
+    console.error("Error uploading file:", error);
+  }
+};
+
 
      //    const formData = new FormData();
      //    formData.append('_id', _id);
