@@ -301,7 +301,7 @@ const Edit_UserProfile_page = () => {
                                     <div className="card-body">
                                         <form method="POST">
                                             <div className="form-group">
-                                                <label className="form-label mt-0 ms-1">Update Profile Image</label>
+                                                <label className="form-label mt-0 ms-1">Update Profile Image*</label>
                                                     <input id="profileImage" className="form-control"
                                                         type="file"
                                                         name='file'
